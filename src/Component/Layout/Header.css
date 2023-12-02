@@ -1,0 +1,32 @@
+.header__nav{
+  margin: 0px 0px;
+background-color: brown;
+display: flex;
+justify-content: space-between;
+}
+.header__h1{
+  color: aliceblue;
+  font-weight: bold;
+  margin-left: 60px;
+}
+
+.header__div{
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 5px;
+  margin:20px 60px;
+  padding: 20px;
+  height: 7px;
+  width: 150px;
+  text-align: center;
+  border-radius: 15px;
+  background-color:darkred ;
+}
+
+.header__button{
+  border-radius: 50%;
+  background-color: darkred;
+  cursor: pointer;
+  border: none;
+}
