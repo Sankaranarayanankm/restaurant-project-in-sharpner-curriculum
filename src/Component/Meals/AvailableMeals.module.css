@@ -10,26 +10,7 @@
   margin: 0;
   padding: 0;
   border-radius: 15px;
-  border: 1px solid black;
-  background-color: wheat;
-
-
-
 }
-.meals li {  
-  /* margin-top: 0; */
-  font-weight: bold;
-  border-bottom: 1px outset ;
-  margin: 20px;
-}
-.meals p:first-child{
-  font-style: italic;
-  font-weight: lighter;
-}
-.meals p:last-child{
-  color: brown;
-}
-
 
 @keyframes meals-appear {
   from {
