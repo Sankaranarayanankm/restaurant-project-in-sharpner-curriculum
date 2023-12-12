@@ -3,22 +3,26 @@ import ReactDOM from "react-dom";
 import classes from "./Model.module.css";
 
 const Backdrop = (props) => {
-  return <div className={classes.backdrop} />;
+
+  return <div className={classes.backdrop} onClick={props.onClick}/>;
 };
 
 const ModelOverlay = (props) => {
+  console.log(props)
+
   return (
-    <div className={classes.modal}>
+    <div className={classes.modal} >
       <div className={classes.content}>{props.children}</div>
     </div>
   );
 };
 
 const Model = (props) => {
+
   const portalElement=document.getElementById("overlays");
   return <React.Fragment>
-    {ReactDOM.createPortal(<Backdrop />,portalElement)}
-    {ReactDOM.createPortal(<ModelOverlay>{props.children}</ModelOverlay>,portalElement )}
+    {ReactDOM.createPortal(<Backdrop onClick={props.onHideCart}/>,portalElement)}
+    {ReactDOM.createPortal(<ModelOverlay >{props.children}</ModelOverlay>,portalElement )}
   </React.Fragment>;
 };
 
