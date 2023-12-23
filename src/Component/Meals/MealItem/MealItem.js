@@ -1,8 +1,10 @@
 import classes from "./MealItem.module.css";
-import React from "react";
+import React, { useContext } from "react";
 import MealsForm from "./MealsForm";
+import cartContext from "../../../Store/cart-context";
 
 const MealItem =(props)=>{
+ 
   const price=`$${props.price.toFixed(2)}`;
   return <li className={classes.meal}>
     <div>
