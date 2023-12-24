@@ -4,10 +4,19 @@ import Input from "../../UI/Input";
 import cartContext from "../../../Store/cart-context";
 
 const MealsForm = (props) => {
+  // console.log(props)
  const [amount,setAmount]=useState(1);
+ 
  const cartctx=useContext(cartContext);
- const addItemHandler=()=>{
-  cartctx.addItem(amount);
+ const addItemHandler=(item)=>{
+  // cartctx.items=[...cartctx.items,item] // how to add state for this so that i can map all the item to the browser
+  const newItem={
+    items:[...cartctx.items,item],
+    amount
+  }
+  cartctx.addItem(newItem);
+//  console.log(cartctx.items)
+  
  }
  const amountChangeHandler=(event)=>{
   setAmount(event.target.value)
@@ -29,7 +38,7 @@ const MealsForm = (props) => {
           onChange: amountChangeHandler
         }}
       />
-      <button type="button" onClick={addItemHandler}>+ Add</button>
+      <button type="button" onClick={()=>addItemHandler(props.data)}>+ Add</button>
     </form>
   );
 };

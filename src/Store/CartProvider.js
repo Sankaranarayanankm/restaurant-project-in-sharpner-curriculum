@@ -7,12 +7,13 @@ const [cartState,setCartState]=useState({
   totalAmount:0,
 });
 
-
   const addItemToCartHandler=(item)=>{
-    item=Number(item);
+   
+    let itemAmount=Number(item.amount);
     setCartState((prev)=>({
       ...prev,
-      totalAmount:prev.totalAmount+item,
+      items:[...cartState.items,item],
+      totalAmount:prev.totalAmount+itemAmount,
     }))
     
   }
